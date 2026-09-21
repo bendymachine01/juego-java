@@ -1,145 +1,141 @@
-# Sprout Runner
+# San Gil Runner
 
-**Sprout Runner** is an original, fullscreen, browser-based retro platformer inspired by classic side-scrolling jump-and-run games. It is built as a single self-contained HTML5 Canvas game with no framework, no build step, and no external game assets.
+## Descripción
 
-> This project intentionally uses original characters, art, names, and level styling. It is a Mario-style platformer clone in mechanics only, not a copy of Nintendo assets or branding.
+**San Gil Runner** es un juego 2D desarrollado con **HTML, CSS y JavaScript Vanilla**. El proyecto está basado en la idea de un juego de plataformas y carreras, pero fue adaptado y personalizado con elementos relacionados con **San Gil, Santander**.
 
-## Live Demo
+El jugador debe avanzar por diferentes escenarios, superar obstáculos, recoger monedas y llegar hasta la meta.
 
-Play the deployed game here:
+## Tecnologías utilizadas
 
-**https://sprout-runner.vercel.app**
+* HTML5
+* CSS3
+* JavaScript Vanilla
+* Canvas 2D
+* Git y GitHub
+* Vercel
 
-This URL is also attached to the GitHub repository homepage/About link.
+No se utilizaron frameworks ni librerías externas.
 
-## Screenshot
+## Versión 1
 
-![Sprout Runner gameplay — a fullscreen side-scrolling platformer showing terrain, coins, question blocks, the player character, and the score/coins/lives/timer HUD](docs/screenshot.png)
+La Versión 1 corresponde al juego original seleccionado para la actividad:
 
-## Features
+**Sprout Runner**
 
-- Fullscreen responsive browser layout
-- Pixel-art inspired original visual style
-- Smooth side-scrolling camera
-- Hand-built tile level with pits, platforms, pipes, stairs, spikes, surprise blocks, bricks, and a goal flag
-- Player physics with:
-  - gravity
-  - acceleration and friction
-  - run/dash speed
-  - coyote-time forgiving jumps
-  - variable jump height
-- Enemies with patrol behavior
-- Stomp-to-defeat enemy interactions
-- Side-contact damage, lives, respawn, and game-over state
-- Coins and score tracking
-- Surprise blocks with coin/power-up behavior
-- Sunfruit-style power-up that grows the player
-- Level timer and progress indicator
-- Win state at the goal flag
-- Pause, restart, title, game-over, and course-clear screens
-- Keyboard controls
-- Touch controls for mobile/coarse-pointer devices
-- Lightweight debug API used for automated browser verification
+Repositorio original:
 
-## Controls
+`https://github.com/carlomigueldy/sprout-runner`
 
-| Action | Keyboard |
-| --- | --- |
-| Start | `Enter` |
-| Move | `A` / `D` or `←` / `→` |
-| Jump | `W`, `↑`, or `Space` |
-| Run / Dash | `Shift` |
-| Pause | `P` |
-| Restart | `R` |
+En esta versión se revisó la estructura del código, las variables, funciones, algoritmos y mecánicas principales del juego.
 
-On touch devices, on-screen buttons appear automatically for left/right movement, jump, and run.
+## Versión 2 - San Gil Runner
 
-## Tech Stack
+Para la segunda versión se realizó una adaptación propia del concepto del juego.
 
-- **HTML5**
-- **CSS3**
-- **Vanilla JavaScript**
-- **Canvas 2D API**
-- **Vercel static hosting**
+Se cambiaron y agregaron diferentes elementos para crear una versión relacionada con San Gil.
 
-No bundler, package manager, game engine, or runtime dependencies are required for the game itself.
+### Cambios realizados
 
-## Project Structure
+* Nuevo nombre: **San Gil Runner**
+* Nuevo diseño visual.
+* Escenarios inspirados en las montañas y naturaleza de San Gil.
+* Elementos relacionados con el río.
+* Meta con el nombre de San Gil.
+* Sistema de vidas.
+* Sistema de puntuación.
+* Monedas coleccionables.
+* Enemigos.
+* Power-ups.
+* Escudo.
+* Checkpoints.
+* Tres niveles.
+* Sistema de tiempo.
+* Cámara con desplazamiento.
+* Pantalla de inicio.
+* Pantalla de pausa.
+* Pantalla de Game Over.
+* Pantalla de victoria.
+* Controles para computador.
+* Controles táctiles para dispositivos móviles.
+* Efectos de partículas.
+* Efectos de sonido generados con JavaScript.
 
-```text
-sprout-runner/
-├── index.html        # Complete game: markup, styles, rendering, physics, level, and input
-├── README.md         # Project documentation
-├── vercel.json       # Static deployment configuration
-└── .gitignore        # Local/deployment artifacts to ignore
-```
+## Controles
 
-## Running Locally
+| Tecla           | Función              |
+| --------------- | -------------------- |
+| A / ←           | Mover a la izquierda |
+| D / →           | Mover a la derecha   |
+| W / ↑ / Espacio | Saltar               |
+| Shift           | Correr               |
+| P               | Pausar               |
 
-Because the game is a self-contained static HTML file, you can open it directly:
+## Objetivo del juego
 
-```bash
-xdg-open index.html
-```
+El objetivo es recorrer los diferentes niveles, recoger monedas, evitar o derrotar enemigos, activar checkpoints y llegar hasta la bandera de **SAN GIL**.
 
-Or serve it with any static server:
+Al completar los tres niveles se muestra la pantalla de victoria con la puntuación final.
 
-```bash
-python3 -m http.server 3000
-```
-
-Then open:
+## Estructura del proyecto
 
 ```text
-http://localhost:3000
+San-Gil-Runner/
+│
+├── index.html
+├── .gitignore
+├── vercel.json
+└── README.md
 ```
 
-## Deployment
+### index.html
 
-This repository is configured for static deployment on Vercel. Since there is no build step, Vercel serves the repository root directly.
+Contiene el juego completo, incluyendo:
 
-Manual deployment with the Vercel CLI:
+* HTML
+* CSS
+* JavaScript
+* Canvas
+* Menús
+* Personaje
+* Enemigos
+* Plataformas
+* Monedas
+* Niveles
+* Colisiones
+* Puntuación
+* Vidas
+* Sonidos
 
-```bash
-npx vercel --prod
-```
+### .gitignore
 
-## Gameplay Systems
+Contiene archivos y carpetas que no deben subirse al repositorio, como configuraciones locales, archivos temporales y carpetas de herramientas.
 
-### Player
+### vercel.json
 
-The player character includes acceleration-based movement, friction, grounded checks, jump buffering/coyote-time, variable-height jumping, invulnerability after damage, and a larger powered-up state.
+Contiene la configuración necesaria para desplegar el proyecto en Vercel.
 
-### Level
+## Cómo ejecutar el proyecto
 
-The level is generated in JavaScript using a tile map. Ground, pits, brick blocks, surprise blocks, pipes, stone platforms, coins, hazards, enemies, and the goal flag are all placed procedurally in the `Level.build()` method.
+1. Descargar o clonar el repositorio.
+2. Abrir la carpeta en Visual Studio Code.
+3. Abrir `index.html`.
+4. Ejecutarlo con Live Server o directamente desde el navegador.
+5. Presionar **JUGAR**.
 
-### Collision
+## Publicación
 
-The game uses axis-separated rectangle collision against solid tiles for the player, enemies, and power-ups. Pits are intentionally empty below the world bounds so falling into gaps causes a life loss and respawn.
+El proyecto puede ser publicado utilizando **Vercel**, permitiendo acceder al juego desde un navegador mediante un enlace web.
 
-### Enemies
+## Autor
 
-Enemies patrol platforms, reverse direction at walls/edges, can be defeated by stomping from above, and damage the player on side contact.
+**Proyecto académico - Especialidad en Sistemas**
 
-### HUD and States
+Colegio San José de Guanentá
+San Gil, Santander, Colombia
 
-The HUD displays score, coins, lives, timer, and course progress. Game states include title, playing, paused, game over, and win.
+## Créditos
 
-## Browser Verification
+La Versión 1 corresponde al proyecto **Sprout Runner**, utilizado como referencia para estudiar la estructura y mecánicas de un juego 2D.
 
-The game exposes a small `window.__gameDebug` object for automated smoke tests. It can start the game, hold inputs, tick the simulation, teleport the player, and inspect current state. This was used to verify:
-
-- the game starts correctly
-- the canvas renders
-- movement and running work
-- jumping works
-- coins increment score and coin count
-- stomping enemies works
-- side damage costs a life
-- pits are lethal and respawn the player
-- the goal flag triggers the win state
-
-## License
-
-MIT — see source for implementation details. All game code and visuals in this repository are original for this project.
+La Versión 2 fue adaptada y personalizada para esta actividad como **San Gil Runner**.
